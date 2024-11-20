@@ -4,7 +4,7 @@ info:
   description: API for pushing ITMS data to UnifillAI.
   version: 1.0.0
 servers:
-  - url: https://unifillai.com/api/custom-workflow
+  - url: https://unifillai.com/api/inusurance-dekho/custom-workflow
     description: Production server
 paths:
   /customer/create:
