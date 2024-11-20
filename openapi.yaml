@@ -23,10 +23,10 @@ paths:
               properties:
                 ticket_id:
                   type: integer
-                  example: 27007016
+                  example: 1234567
                 insurer_name:
                   type: string
-                  example: "Universal Sompo"
+                  example: "Universal XXXXXX"
                 preferred_addons:
                   type: array
                   items:
@@ -56,13 +56,13 @@ paths:
                   example: "NULL"
                 registration_no:
                   type: string
-                  example: "BR10AP7308"
+                  example: "BR10XXXXX"
                 rto:
                   type: string
-                  example: "BR10"
+                  example: "BRXX"
                 makeModelName:
                   type: string
-                  example: "Hyundai Creta 2020-2024 SX Opt Adventure Edition IVT DT"
+                  example: "HyXXX"
                 gross_weight:
                   type: string
                   example: "NULL"
@@ -80,7 +80,7 @@ paths:
                   example: "Petrol"
                 registration_date:
                   type: number
-                  example: 45149.00011574074
+                  example: "01-01-2022"
                 manufacturing_date:
                   type: string
                   format: date
@@ -90,10 +90,10 @@ paths:
                   example: 1
                 first_name:
                   type: string
-                  example: "Pinki"
+                  example: "JHON"
                 last_name:
                   type: string
-                  example: "singh"
+                  example: "DOE"
                 mobile:
                   type: string
                   example: "9999999999"
@@ -103,16 +103,16 @@ paths:
                   example: "dummy_quote@gmail.com"
                 address:
                   type: string
-                  example: "W O RAVI BHUSHAN SINGH MUNDICHAK GIRISH CHANDRA,"
+                  example: "ABC CITY, XYZ ROAD"
                 state:
                   type: integer
                   example: 5
                 city_name:
                   type: string
-                  example: "Bhagalpur"
+                  example: "XYZ CITY"
                 pincode:
                   type: string
-                  example: "812001"
+                  example: "000000"
                 gender:
                   type: string
                   example: "female"
@@ -127,16 +127,16 @@ paths:
                   example: "NULL"
                 engine_no:
                   type: string
-                  example: "G4FLPB301174"
+                  example: "XXXXX1313"
                 chassis_no:
                   type: string
-                  example: "MALPC812LPM566744"
+                  example: "XXXXX11313"
                 pre_policy_insurer_name:
                   type: string
-                  example: "SBI General Insurance"
-                concat_off_pre_policy_number:
+                  example: "SBI XXXX"
+                policy_number:
                   type: string
-                  example: "HYNDAIHIIB/1088773\""
+                  example: "XXXXX12323"
                 permit_usage_types:
                   type: string
                   example: "NULL"
@@ -145,7 +145,7 @@ paths:
                   example: 1
                 finance_company_name:
                   type: string
-                  example: "Bank Of Baroda"
+                  example: "Bank Of XXXXX"
                 payment_mode:
                   type: string
                   example: "online"
@@ -154,27 +154,27 @@ paths:
                   example: 0
                 inspection_id:
                   type: string
-                  example: "USGI0411241420161"
+                  example: "ABCDXXXXX112"
                 rc_copy:
                   type: string
-                  example: "75ff7403c543e024d07854f3facd819d"
+                  example: "XXXXXXXXXXXXXXX"
                 prev_copy:
                   type: string
-                  example: "b581026225eb1fd40536107acf0c8b55"
+                  example: "XXXXXXXXXXXXXXX"
                 rc_copy_doc_id:
                   type: string
-                  example: "f7069228793cea701cce399ac4ccfeed"
+                  example: "XXXXXXXXXXXXXXX"
                 prev_copy_doc_id:
                   type: string
-                  example: "cd49f8868894202728e9a14be525da83"
+                  example: "XXXXXXXXXXXXXXX"
                 rc_copy_link:
                   type: string
                   format: uri
-                  example: "https://documents.insurancedekho.com/doc-service/v1/documents/75ff7403c543e024d07854f3facd819d"
+                  example: "https://example.com/doc-service"
                 prev_copy_link:
                   type: string
                   format: uri
-                  example: "https://documents.insurancedekho.com/doc-service/v1/documents/b581026225eb1fd40536107acf0c8b55"
+                  example: "https://example.com/doc-service"
               additionalProperties: true
               required:
                 - ticket_id
