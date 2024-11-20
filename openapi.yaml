@@ -1,0 +1,219 @@
+openapi: 3.0.3
+info:
+  title: ITMS Data Push API
+  description: API for pushing ITMS data to UnifillAI.
+  version: 1.0.0
+servers:
+  - url: https://unifillai.com/api/custom-workflow
+    description: Production server
+paths:
+  /customer/create:
+    post:
+      summary: Push ITMS Data to UnifillAI
+      description: Endpoint to push ITMS data to UnifillAI with required payload.
+      operationId: pushITMSData
+      tags:
+        - ITMS Data
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                ticket_id:
+                  type: integer
+                  example: 27007016
+                insurer_name:
+                  type: string
+                  example: "Universal Sompo"
+                preferred_addons:
+                  type: array
+                  items:
+                    type: string
+                  example:
+                    - "Zero Dep"
+                    - "Consumables"
+                    - "Invoice Cover"
+                    - "PA Owner Driver"
+                preferred_idv:
+                  type: number
+                  example: 1380000
+                case_type:
+                  type: string
+                  example: "Renewal"
+                policy_type:
+                  type: string
+                  example: "Own demage"
+                VehicleType:
+                  type: string
+                  example: "Car"
+                vehicle_sub_type:
+                  type: string
+                  example: "NULL"
+                vehicle_sub_usage_type:
+                  type: string
+                  example: "NULL"
+                registration_no:
+                  type: string
+                  example: "BR10AP7308"
+                rto:
+                  type: string
+                  example: "BR10"
+                makeModelName:
+                  type: string
+                  example: "Hyundai Creta 2020-2024 SX Opt Adventure Edition IVT DT"
+                gross_weight:
+                  type: string
+                  example: "NULL"
+                engine_capacity:
+                  type: number
+                  example: 1497
+                claim_taken:
+                  type: integer
+                  example: 0
+                previous_ncb:
+                  type: number
+                  example: 1
+                fuel_type:
+                  type: string
+                  example: "Petrol"
+                registration_date:
+                  type: number
+                  example: 45149.00011574074
+                manufacturing_date:
+                  type: string
+                  format: date
+                  example: "31-08-2023"
+                owner_type:
+                  type: integer
+                  example: 1
+                first_name:
+                  type: string
+                  example: "Pinki"
+                last_name:
+                  type: string
+                  example: "singh"
+                mobile:
+                  type: string
+                  example: "9999999999"
+                email_id:
+                  type: string
+                  format: email
+                  example: "dummy_quote@gmail.com"
+                address:
+                  type: string
+                  example: "W O RAVI BHUSHAN SINGH MUNDICHAK GIRISH CHANDRA,"
+                state:
+                  type: integer
+                  example: 5
+                city_name:
+                  type: string
+                  example: "Bhagalpur"
+                pincode:
+                  type: string
+                  example: "812001"
+                gender:
+                  type: string
+                  example: "female"
+                marital_status:
+                  type: string
+                  example: "married"
+                pan_card:
+                  type: string
+                  example: "NULL"
+                aadhar_card_number:
+                  type: string
+                  example: "NULL"
+                engine_no:
+                  type: string
+                  example: "G4FLPB301174"
+                chassis_no:
+                  type: string
+                  example: "MALPC812LPM566744"
+                pre_policy_insurer_name:
+                  type: string
+                  example: "SBI General Insurance"
+                concat_off_pre_policy_number:
+                  type: string
+                  example: "HYNDAIHIIB/1088773\""
+                permit_usage_types:
+                  type: string
+                  example: "NULL"
+                car_financed:
+                  type: integer
+                  example: 1
+                finance_company_name:
+                  type: string
+                  example: "Bank Of Baroda"
+                payment_mode:
+                  type: string
+                  example: "online"
+                inspection_type:
+                  type: integer
+                  example: 0
+                inspection_id:
+                  type: string
+                  example: "USGI0411241420161"
+                rc_copy:
+                  type: string
+                  example: "75ff7403c543e024d07854f3facd819d"
+                prev_copy:
+                  type: string
+                  example: "b581026225eb1fd40536107acf0c8b55"
+                rc_copy_doc_id:
+                  type: string
+                  example: "f7069228793cea701cce399ac4ccfeed"
+                prev_copy_doc_id:
+                  type: string
+                  example: "cd49f8868894202728e9a14be525da83"
+                rc_copy_link:
+                  type: string
+                  format: uri
+                  example: "https://documents.insurancedekho.com/doc-service/v1/documents/75ff7403c543e024d07854f3facd819d"
+                prev_copy_link:
+                  type: string
+                  format: uri
+                  example: "https://documents.insurancedekho.com/doc-service/v1/documents/b581026225eb1fd40536107acf0c8b55"
+              additionalProperties: true
+              required:
+                - ticket_id
+                - insurer_name
+                - registration_no
+                - makeModelName
+      responses:
+        '200':
+          description: Successful data push
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Data pushed successfully"
+                  status:
+                    type: string
+                    example: "success"
+        '400':
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: "Invalid payload"
+        '401':
+          description: Unauthorized
+        '500':
+          description: Internal server error
+      security:
+        - api_key: []
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: authkey
+      in: header
